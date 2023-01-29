@@ -1,3 +1,5 @@
 @import '../../styles/variables';
 
-.toolbar { @include toolbar; padding: 0 10px; }
+.toolbar { @include toolbar; padding: 0 10px; background-color: $main; border-bottom: 1px solid $black;
+  &__picker { width: 25px; }
+}

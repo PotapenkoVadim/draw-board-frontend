@@ -1,0 +1,5 @@
+@import '../../styles/variables';
+
+.draw-board { position: relative; background-color: $grey;
+  &__toolbar { position: absolute; top: 10px; left: 10px; width: max-content; z-index: 5; width: 300px; }
+}

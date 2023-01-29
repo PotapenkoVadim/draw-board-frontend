@@ -1,3 +1,5 @@
 @import '../../styles/variables';
 
-.setting-bar { @include toolbar; top: $toolbar-height; }
+.setting-bar { @include toolbar; top: $toolbar-height; background-color: $white; padding: 0 5px;
+  &__picker { width: 25px; margin: 0 5px; }
+}

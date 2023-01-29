@@ -34,7 +34,7 @@ export default observer(function () {
           <Button onClick={selectRect} variant="square" />
           <Button onClick={selectCircle} variant="circle" />
           <Button onClick={selectEraser} variant="highlighter" />
-          <InputField onChange={changeColor} type="color" />
+          <InputField className={styles['toolbar__picker']} onChange={changeColor} type="color" />
 
           <Button onClick={selectLine} variant="line" />
           <Button onClick={undo} variant="undo" />

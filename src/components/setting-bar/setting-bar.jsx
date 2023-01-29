@@ -28,17 +28,18 @@ export default observer(function () {
       {toolState.tool && (
         <>
           <InputField
-            id="Line width:"
+            id="width"
             onChange={changeLineWidth}
             defaultValue={1}
             min={1}
             max={50}
-            label="width"
+            label="Line width:"
             type="number"
           />
 
           {!isHideStrokeSetting && (
             <InputField
+              className={styles['setting-bar__picker']}
               label="Stroke color:"
               onChange={changeStrokeColor}
               type="color"

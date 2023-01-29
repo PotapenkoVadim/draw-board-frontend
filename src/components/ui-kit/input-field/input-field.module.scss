@@ -2,4 +2,5 @@
 
 .field { display: flex; align-items: center;
   &__input { margin: 0 10px; }
+  &__label { font-family: monospace; }
 }

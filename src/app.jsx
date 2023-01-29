@@ -1,18 +1,13 @@
 import React from 'react';
-import Canvas from '@/components/canvas/canvas';
-import Toolbar from '@/components/toolbar/toolbar';
-import SettingBar from '@/components/setting-bar/setting-bar';
+import { useRoutes } from 'react-router-dom';
+import DrawBoard from '@/components/draw-board/draw-board';
+import Entry from '@/components/entry/entry';
 
 import './styles/global.scss';
 
 export default function App() {
-  return (
-    <main className="app">
-      <Toolbar />
-
-      <SettingBar />
-
-      <Canvas />
-    </main>
-  );
+  return useRoutes([
+    { path: '/', element: <Entry /> },
+    { path: '/:id', element: <DrawBoard /> }
+  ]);
 }
