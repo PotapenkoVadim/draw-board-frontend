@@ -12,7 +12,8 @@ module.exports = (env, argv) => {
     devtool: isDev ? 'source-map' : false,
     devServer: {
       port: 3000,
-      open: true
+      open: true,
+      historyApiFallback: true
     },
     entry: ['@babel/polyfill', path.resolve(__dirname, 'src', 'index.js')],
     output: {
