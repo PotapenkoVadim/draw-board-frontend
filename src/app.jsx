@@ -8,6 +8,6 @@ import './styles/global.scss';
 export default function App() {
   return useRoutes([
     { path: '/', element: <Entry /> },
-    { path: '/:id', element: <DrawBoard /> }
+    { path: '/:id', element: <DrawBoard /> },
   ]);
 }

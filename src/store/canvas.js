@@ -11,9 +11,9 @@ class CanvasState {
 
   setCanvas(canvas) {
     this.canvas = canvas;
-    this.canvas.style  = '100%';
     this.canvas.style = '100%';
-    this.canvas.width  = window.innerWidth - 10;
+    this.canvas.style = '100%';
+    this.canvas.width = window.innerWidth - 10;
     this.canvas.height = window.innerHeight - 10;
   }
 

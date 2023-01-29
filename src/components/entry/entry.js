@@ -8,7 +8,10 @@ export default function Entry() {
       <div className={styles['entry__container']}>
         <h1 className={styles['entry__title']}>Welcome to DrawBoard</h1>
 
-        <NavLink className={styles['entry__link']} to={`f${(+new Date).toString(16)}`}>
+        <NavLink
+          className={styles['entry__link']}
+          to={`f${(+new Date()).toString(16)}`}
+        >
           Entry to room
         </NavLink>
       </div>
