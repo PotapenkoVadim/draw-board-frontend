@@ -8,6 +8,10 @@ import styles from './canvas.module.scss';
 export default observer(function () {
   const canvasRef = useRef();
 
+  const saveUserAction = () => {
+    canvasState.pushToUndo(canvasRef.current.toDataURL());
+  };
+
   useEffect(() => {
     canvasState.setCanvas(canvasRef.current);
     toolState.setTool(new Brush(canvasRef.current));
@@ -16,6 +20,7 @@ export default observer(function () {
   return (
     <div className={styles['canvas']}>
       <canvas
+        onMouseDown={saveUserAction}
         ref={canvasRef}
         className={styles['canvas__board']}
         width={600}

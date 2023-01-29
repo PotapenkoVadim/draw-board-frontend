@@ -23,6 +23,9 @@ export default observer(function () {
     toolState.setFillColor(event.target.value);
   };
 
+  const undo = () => canvasState.undo();
+  const redo = () => canvasState.redo();
+
   return (
     <div className={styles['toolbar']}>
       {toolState.tool && (
@@ -34,8 +37,8 @@ export default observer(function () {
           <InputField onChange={changeColor} type="color" />
 
           <Button onClick={selectLine} variant="line" />
-          <Button variant="undo" />
-          <Button variant="redo" />
+          <Button onClick={undo} variant="undo" />
+          <Button onClick={redo} variant="redo" />
           <Button variant="save" />
         </>
       )}
