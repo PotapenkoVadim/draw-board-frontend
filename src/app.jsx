@@ -7,11 +7,11 @@ import './styles/global.scss';
 
 export default function App() {
   return (
-    <main className='app'>
+    <main className="app">
       <Toolbar />
 
       <SettingBar />
-      
+
       <Canvas />
     </main>
   );
