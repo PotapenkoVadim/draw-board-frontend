@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
+import ButtonField from '@/components/ui-kit/button-field/button-filed';
 import styles from './entry.module.scss';
 
 export default function Entry() {
@@ -8,12 +8,7 @@ export default function Entry() {
       <div className={styles['entry__container']}>
         <h1 className={styles['entry__title']}>Welcome to DrawBoard</h1>
 
-        <NavLink
-          className={styles['entry__link']}
-          to={`f${(+new Date()).toString(16)}`}
-        >
-          Entry to room
-        </NavLink>
+        <ButtonField />
       </div>
     </div>
   );
