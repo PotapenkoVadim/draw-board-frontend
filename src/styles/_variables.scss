@@ -1,0 +1,12 @@
+$background: #F6F6F6;
+
+$toolbar-height: 40px;
+
+@mixin toolbar {
+  height: $toolbar-height;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  width: 100%;
+  box-shadow: 0 4px 5px gray;
+}

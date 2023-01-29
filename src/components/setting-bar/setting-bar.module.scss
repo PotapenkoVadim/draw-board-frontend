@@ -1,0 +1,3 @@
+@import '../../styles/variables';
+
+.setting-bar { @include toolbar; top: $toolbar-height; }

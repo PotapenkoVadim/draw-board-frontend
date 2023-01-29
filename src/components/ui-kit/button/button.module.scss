@@ -1,0 +1,15 @@
+@import '../../../styles/variables';
+
+.button { height: 25px; width: 25px; border: none; outline: none; cursor: pointer;
+  background-position: center center; background-repeat: no-repeat; background-size: cover;
+  background-color: inherit; margin: 0px 3px;
+
+  &__brush { background-image: url(../../../assets/images/brush.svg); }
+  &__circle { background-image: url(../../../assets/images/circle.svg); }
+  &__highlighter { background-image: url(../../../assets/images/highlighter.svg); }
+  &__line { background-image: url(../../../assets/images/line.svg); transform: rotate(-45deg); background-position: 2px 10px; }
+  &__redo { background-image: url(../../../assets/images/redo.svg); }
+  &__save { background-image: url(../../../assets/images/save.svg); }
+  &__square { background-image: url(../../../assets/images/square.svg); }
+  &__undo { background-image: url(../../../assets/images/undo.svg); margin-left: auto; }
+}
