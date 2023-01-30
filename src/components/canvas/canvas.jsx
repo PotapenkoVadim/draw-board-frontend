@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { observer } from 'mobx-react-lite';
 import { useParams } from 'react-router-dom';
+import toast, { Toaster } from 'react-hot-toast';
 import canvasState from '@/store/canvas';
 import toolState from '@/store/tool';
 import Brush from '@/tools/brush';
@@ -33,7 +34,7 @@ export default observer(function () {
   useEffect(() => {
     if (canvasState.username) {
       const socket = new WebSocket(configuration.serverURL);
-      console.log('Connection has run');
+      toast.success('Connection has run', configuration.toast);
 
       toolState.setTool(new Brush(canvasRef.current, socket, params.id));
 
@@ -54,7 +55,10 @@ export default observer(function () {
 
           switch (message.method) {
             case 'connection':
-              console.log(`User ${message.username} has connected`);
+              toast.success(
+                `User ${message.username} has connected`,
+                configuration.toast
+              );
               break;
 
             case 'draw':
@@ -75,6 +79,8 @@ export default observer(function () {
         width={600}
         height={400}
       />
+
+      <Toaster />
     </div>
   );
 });
