@@ -30,17 +30,62 @@ export default observer(function () {
     <div className={styles['toolbar']}>
       {toolState.tool && (
         <>
-          <Button onClick={selectBrushTool} variant="brush" />
-          <Button onClick={selectRect} variant="square" />
-          <Button onClick={selectCircle} variant="circle" />
-          <Button onClick={selectEraser} variant="highlighter" />
+          <Button
+            className={
+              toolState.tool.name === 'brush'
+                ? styles['toolbar__tool_active']
+                : ''
+            }
+            onClick={selectBrushTool}
+            variant="brush"
+          />
+
+          <Button
+            className={
+              toolState.tool.name === 'rect'
+                ? styles['toolbar__tool_active']
+                : ''
+            }
+            onClick={selectRect}
+            variant="square"
+          />
+
+          <Button
+            className={
+              toolState.tool.name === 'circle'
+                ? styles['toolbar__tool_active']
+                : ''
+            }
+            onClick={selectCircle}
+            variant="circle"
+          />
+
+          <Button
+            className={
+              toolState.tool.name === 'eraser'
+                ? styles['toolbar__tool_active']
+                : ''
+            }
+            onClick={selectEraser}
+            variant="highlighter"
+          />
+
           <InputField
             className={styles['toolbar__picker']}
             onChange={changeColor}
             type="color"
           />
 
-          <Button onClick={selectLine} variant="line" />
+          <Button
+            className={
+              toolState.tool.name === 'line'
+                ? styles['toolbar__tool_active']
+                : ''
+            }
+            onClick={selectLine}
+            variant="line"
+          />
+
           <Button onClick={undo} variant="undo" />
           <Button onClick={redo} variant="redo" />
           <Button variant="save" />

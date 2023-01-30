@@ -4,6 +4,7 @@ export default class Line extends Tool {
   constructor(canvas) {
     super(canvas);
 
+    this.name = 'line';
     this.listen();
   }
 

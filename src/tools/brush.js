@@ -4,6 +4,7 @@ export default class Brush extends Tool {
   constructor(canvas, socket, id) {
     super(canvas, socket, id);
 
+    this.name = 'brush';
     this.listen();
   }
 
@@ -29,11 +30,6 @@ export default class Brush extends Tool {
 
   mouseMoveHandler(event) {
     if (this.mouseDown) {
-      // this.draw(
-      //   event.pageX - event.target.offsetLeft,
-      //   event.pageY - event.target.offsetTop
-      // );
-
       this.socket.send(
         JSON.stringify({
           method: 'draw',

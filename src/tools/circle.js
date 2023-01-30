@@ -4,6 +4,7 @@ export default class Circle extends Tool {
   constructor(canvas) {
     super(canvas);
 
+    this.name = 'circle';
     this.listen();
   }
 

@@ -4,6 +4,7 @@ export default class Rect extends Tool {
   constructor(canvas) {
     super(canvas);
 
+    this.name = 'rect';
     this.listen();
   }
 
