@@ -13,11 +13,25 @@ import styles from './toolbar.module.scss';
 
 export default observer(function () {
   const selectBrushTool = () =>
-    toolState.setTool(new Brush(canvasState.canvas));
-  const selectRect = () => toolState.setTool(new Rect(canvasState.canvas));
-  const selectCircle = () => toolState.setTool(new Circle(canvasState.canvas));
-  const selectEraser = () => toolState.setTool(new Eraser(canvasState.canvas));
-  const selectLine = () => toolState.setTool(new Line(canvasState.canvas));
+    toolState.setTool(
+      new Brush(canvasState.canvas, canvasState.socket, canvasState.sessionID)
+    );
+  const selectRect = () =>
+    toolState.setTool(
+      new Rect(canvasState.canvas, canvasState.socket, canvasState.sessionID)
+    );
+  const selectCircle = () =>
+    toolState.setTool(
+      new Circle(canvasState.canvas, canvasState.socket, canvasState.sessionID)
+    );
+  const selectEraser = () =>
+    toolState.setTool(
+      new Eraser(canvasState.canvas, canvasState.socket, canvasState.sessionID)
+    );
+  const selectLine = () =>
+    toolState.setTool(
+      new Line(canvasState.canvas, canvasState.socket, canvasState.sessionID)
+    );
   const changeColor = (event) => {
     toolState.setStrokeColor(event.target.value);
     toolState.setFillColor(event.target.value);

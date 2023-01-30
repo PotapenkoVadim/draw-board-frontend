@@ -16,6 +16,15 @@ export default class Brush extends Tool {
 
   mouseUpHandler() {
     this.mouseDown = false;
+    this.socket.send(
+      JSON.stringify({
+        method: 'draw',
+        id: this.id,
+        figure: {
+          type: 'finish',
+        },
+      })
+    );
   }
 
   mouseDownHandler(event) {
