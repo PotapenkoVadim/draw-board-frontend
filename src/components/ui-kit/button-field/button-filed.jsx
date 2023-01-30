@@ -1,14 +1,8 @@
 import React from 'react';
-import { NavLink } from 'react-router-dom';
-import canvasState from '@/store/canvas';
 import InputField from '@/components/ui-kit/input-field/input-field';
 import styles from './button-field.module.scss';
 
-export default function ButtonField() {
-  const handleChange = (event) => {
-    canvasState.setUsername(event.target.value);
-  };
-
+export default function ButtonField({ label, handleChange, handleClick }) {
   return (
     <div className={styles['button-field']}>
       <InputField
@@ -16,14 +10,11 @@ export default function ButtonField() {
         className={styles['button-field__input']}
       />
 
-      <NavLink
-        className={styles['button-field__button']}
-        to={`f${(+new Date()).toString(16)}`}
-      >
+      <span onClick={handleClick} className={styles['button-field__button']}>
         Entry to room
-      </NavLink>
+      </span>
 
-      <span className={styles['button-field__label']}>Username:</span>
+      <span className={styles['button-field__label']}>{label}</span>
     </div>
   );
 }
