@@ -16,22 +16,27 @@ export default observer(function () {
     toolState.setTool(
       new Brush(canvasState.canvas, canvasState.socket, canvasState.sessionID)
     );
+
   const selectRect = () =>
     toolState.setTool(
       new Rect(canvasState.canvas, canvasState.socket, canvasState.sessionID)
     );
+
   const selectCircle = () =>
     toolState.setTool(
       new Circle(canvasState.canvas, canvasState.socket, canvasState.sessionID)
     );
+
   const selectEraser = () =>
     toolState.setTool(
       new Eraser(canvasState.canvas, canvasState.socket, canvasState.sessionID)
     );
+
   const selectLine = () =>
     toolState.setTool(
       new Line(canvasState.canvas, canvasState.socket, canvasState.sessionID)
     );
+
   const changeColor = (event) => {
     toolState.setStrokeColor(event.target.value);
     toolState.setFillColor(event.target.value);

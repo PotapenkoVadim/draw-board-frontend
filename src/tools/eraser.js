@@ -7,10 +7,20 @@ export default class Eraser extends Brush {
     this.name = 'eraser';
   }
 
-  draw(x, y) {
-    this.ctx.strokeStyle = '#ffffff';
-
-    this.ctx.lineTo(x, y);
-    this.ctx.stroke();
+  mouseMoveHandler(event) {
+    if (this.mouseDown) {
+      this.socket.send(
+        JSON.stringify({
+          method: 'draw',
+          id: this.id,
+          figure: {
+            type: 'eraser',
+            x: event.pageX - event.target.offsetLeft,
+            y: event.pageY - event.target.offsetTop,
+            color: '#ffffff',
+          },
+        })
+      );
+    }
   }
 }

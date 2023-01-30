@@ -47,14 +47,19 @@ export default class Brush extends Tool {
             type: 'brush',
             x: event.pageX - event.target.offsetLeft,
             y: event.pageY - event.target.offsetTop,
+            color: this.ctx.fillStyle,
+            width: this.ctx.lineWidth,
           },
         })
       );
     }
   }
 
-  static draw(ctx, x, y) {
-    ctx.lineTo(x, y);
+  static draw(ctx, figure) {
+    ctx.strokeStyle = figure.color;
+    ctx.lineWidth = figure.width;
+
+    ctx.lineTo(figure.x, figure.y);
     ctx.stroke();
   }
 }

@@ -5,9 +5,7 @@ import toast, { Toaster } from 'react-hot-toast';
 import canvasState from '@/store/canvas';
 import toolState from '@/store/tool';
 import Brush from '@/tools/brush';
-import Rect from '@/tools/rect';
-import Circle from '@/tools/circle';
-import Line from '@/tools/line';
+import Painter from '@/module/painter';
 import { configuration } from '@/configuration';
 import styles from './canvas.module.scss';
 
@@ -22,34 +20,9 @@ export default observer(function () {
   const drawHandler = (message) => {
     const figure = message.figure;
     const ctx = canvasRef.current.getContext('2d');
+    const painter = new Painter(figure);
 
-    switch (figure.type) {
-      case 'brush':
-        Brush.draw(ctx, figure.x, figure.y);
-        break;
-
-      case 'rect':
-        Rect.staticDraw(ctx, figure.x, figure.y, figure.width, figure.height);
-        break;
-
-      case 'circle':
-        Circle.staticDraw(ctx, figure.x, figure.y, figure.radius);
-        break;
-
-      case 'line':
-        Line.staticDraw(
-          ctx,
-          figure.x,
-          figure.y,
-          figure.cursorX,
-          figure.cursorY
-        );
-        break;
-
-      case 'finish':
-        ctx.beginPath();
-        break;
-    }
+    painter.draw(ctx);
   };
 
   useEffect(() => {

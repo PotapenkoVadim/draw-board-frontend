@@ -68,10 +68,10 @@ export default class Line extends Tool {
     };
   }
 
-  static staticDraw(ctx, x, y, cursorX, cursorY) {
+  static staticDraw(ctx, figure) {
     ctx.beginPath();
-    ctx.moveTo(cursorX, cursorY);
-    ctx.lineTo(x, y);
+    ctx.moveTo(figure.cursorX, figure.cursorY);
+    ctx.lineTo(figure.x, figure.y);
     ctx.stroke();
   }
 }

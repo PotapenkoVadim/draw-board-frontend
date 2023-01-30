@@ -67,9 +67,9 @@ export default class Circle extends Tool {
     };
   }
 
-  static staticDraw(ctx, x, y, radius) {
+  static staticDraw(ctx, figure) {
     ctx.beginPath();
-    ctx.arc(x, y, radius, 0, 2 * Math.PI);
+    ctx.arc(figure.x, figure.y, figure.radius, 0, 2 * Math.PI);
     ctx.fill();
     ctx.stroke();
   }
