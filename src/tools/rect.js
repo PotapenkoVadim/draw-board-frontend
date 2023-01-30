@@ -27,7 +27,8 @@ export default class Rect extends Tool {
           width: this.width,
           height: this.height,
           color: this.ctx.fillStyle,
-          strokeColor: this.ctx.strokeColor,
+          strokeColor: this.ctx.strokeStyle,
+          strokeWidth: this.ctx.lineWidth,
         },
       })
     );
@@ -69,12 +70,13 @@ export default class Rect extends Tool {
     };
   }
 
-  static staticDraw(ctx, x, y, width, height, color, strokeColor) {
-    ctx.fillStyle = color;
-    ctx.strokeColor = strokeColor;
+  static staticDraw(ctx, figure) {
+    ctx.fillStyle = figure.color;
+    ctx.strokeStyle = figure.strokeColor;
+    ctx.lineWidth = figure.strokeWidth;
 
     ctx.beginPath();
-    ctx.rect(x, y, width, height);
+    ctx.rect(figure.x, figure.y, figure.width, figure.height);
     ctx.fill();
     ctx.stroke();
   }

@@ -48,7 +48,7 @@ export default class Brush extends Tool {
             x: event.pageX - event.target.offsetLeft,
             y: event.pageY - event.target.offsetTop,
             color: this.ctx.fillStyle,
-            width: this.ctx.lineWidth,
+            strokeWidth: this.ctx.lineWidth,
           },
         })
       );
@@ -57,7 +57,7 @@ export default class Brush extends Tool {
 
   static draw(ctx, figure) {
     ctx.strokeStyle = figure.color;
-    ctx.lineWidth = figure.width;
+    ctx.lineWidth = figure.strokeWidth;
 
     ctx.lineTo(figure.x, figure.y);
     ctx.stroke();

@@ -17,14 +17,17 @@ export default class Painter {
 
       case 'rect':
         Rect.staticDraw(ctx, this.figure);
+        ctx.beginPath();
         break;
 
       case 'circle':
         Circle.staticDraw(ctx, this.figure);
+        ctx.beginPath();
         break;
 
       case 'line':
         Line.staticDraw(ctx, this.figure);
+        ctx.beginPath();
         break;
 
       case 'eraser':

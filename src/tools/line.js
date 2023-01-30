@@ -26,6 +26,8 @@ export default class Line extends Tool {
           y: event.pageY - event.target.offsetTop,
           cursorX: this.cursorX,
           cursorY: this.cursorY,
+          color: this.ctx.fillStyle,
+          strokeWidth: this.ctx.lineWidth,
         },
       })
     );
@@ -69,6 +71,9 @@ export default class Line extends Tool {
   }
 
   static staticDraw(ctx, figure) {
+    ctx.strokeStyle = figure.color;
+    ctx.lineWidth = figure.strokeWidth;
+
     ctx.beginPath();
     ctx.moveTo(figure.cursorX, figure.cursorY);
     ctx.lineTo(figure.x, figure.y);
