@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import toast, { Toaster } from 'react-hot-toast';
+import { Toaster } from 'react-hot-toast';
 import ButtonField from '@/components/ui-kit/button-field/button-filed';
 import InputField from '@/components/ui-kit/input-field/input-field';
 import canvasState from '@/store/canvas';
-import { configuration } from '@/configuration';
+import Toast from '@/service/toast';
 import styles from './entry.module.scss';
 
 export default function Entry() {
@@ -23,7 +23,7 @@ export default function Entry() {
     if (canvasState.username) {
       navigate(roomID ? `/${roomID}` : `/f${(+new Date()).toString(16)}`);
     } else {
-      toast.error('Username is required!', configuration.toast);
+      Toast.error('username_error');
     }
   };
 
