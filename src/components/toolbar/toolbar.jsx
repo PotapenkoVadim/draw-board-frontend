@@ -50,6 +50,7 @@ export default observer(function () {
       {toolState.tool && (
         <>
           <Button
+            title="Brush"
             className={
               toolState.tool.name === 'brush'
                 ? styles['toolbar__tool_active']
@@ -60,6 +61,7 @@ export default observer(function () {
           />
 
           <Button
+            title="Rect"
             className={
               toolState.tool.name === 'rect'
                 ? styles['toolbar__tool_active']
@@ -70,6 +72,7 @@ export default observer(function () {
           />
 
           <Button
+            title="Circle"
             className={
               toolState.tool.name === 'circle'
                 ? styles['toolbar__tool_active']
@@ -80,6 +83,7 @@ export default observer(function () {
           />
 
           <Button
+            title="Eraser"
             className={
               toolState.tool.name === 'eraser'
                 ? styles['toolbar__tool_active']
@@ -96,6 +100,7 @@ export default observer(function () {
           />
 
           <Button
+            title="Line"
             className={
               toolState.tool.name === 'line'
                 ? styles['toolbar__tool_active']
@@ -105,9 +110,8 @@ export default observer(function () {
             variant="line"
           />
 
-          <Button onClick={undo} variant="undo" />
-          <Button onClick={redo} variant="redo" />
-          <Button variant="save" />
+          <Button title="Undo" onClick={undo} variant="undo" />
+          <Button title="Redo" onClick={redo} variant="redo" />
         </>
       )}
     </div>
